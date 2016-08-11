@@ -3,7 +3,7 @@ echo $PROJECT
 #Check if github repo has GUID
 RESPONSE=`curl -I $GIT_URL/blob/master/GUID 2>/dev/null | head -n 1 | cut -d$' ' -f2`
 #If not
-if [[ $RESPONSE!=200 ]];
+if [[ $RESPONSE != "200" ]];
 #Hash Code
 then CODE_HASH=`md5 -q fast.c`;
 #Hit forgeorck endpoint with  hash and get code GUID
